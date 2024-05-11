@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-between;
     /* padding-top: 20px; */
-    height: 180px;
+    height: 130px;
 }
 
 .highlight-heading p{
@@ -40,7 +40,7 @@
 
 /* Weather Status */
 .weatherStatus-main{
-    font-size: 25px;
+    /* font-size: 25px; */
 }
 
 /* Wind Style */

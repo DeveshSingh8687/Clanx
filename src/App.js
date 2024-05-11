@@ -12,7 +12,7 @@ function App() {
         spacing={0}
         alignItems="center"
         justifyContent="center"
-        style={{ minHeight: '100vh', minWidth: '100vh'  }}
+        style={{ minHeight: '100vh', minWidth: '100vh',  }}
         className='mui-grid-width'
       >
         <Card sx={{  borderRadius: '50px' }} className='sections-main'>

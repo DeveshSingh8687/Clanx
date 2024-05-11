@@ -37,7 +37,6 @@ function Highlights() {
             <div className='highlight-card-section'>
                 <div className='highlight-single-card'>
                     <p className='dull_text'>WeatherStatus</p>
-                    <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt='weathericon' height='100px' width='100px' />
                     <p className='weatherStatus-main'>{main}</p>
                     <p>{description}</p>
 

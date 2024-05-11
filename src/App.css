@@ -1,4 +1,6 @@
-
+/* .app{
+  height: 80vh;
+} */
 .sections-main{
   display: flex;
   flex-direction: row;
