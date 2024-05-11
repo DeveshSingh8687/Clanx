@@ -1,0 +1,36 @@
+.header-right{
+    display: flex;
+    justify-content: space-between;
+}
+.line-right{
+    border-top: 2px solid black;
+}
+
+/* Week */
+.week{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Temperature */
+.temp-type{
+    display: flex;
+}
+.temp-type p{
+    margin: 5px;
+    padding: 5px;
+    /* font-weight: bold; */
+}
+.temp-type p:hover{
+    cursor: pointer;
+}
+.focus{
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+}
+.unfocus{
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+}

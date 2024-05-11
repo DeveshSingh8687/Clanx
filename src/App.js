@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import LeftSection from './Component/LeftSection/LeftSection';
+import RightSection from './Component/RightSection/RightSection';
+import Grid from '@material-ui/core/Grid';
+import Card from '@mui/material/Card';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Grid
+        container
+        spacing={0}
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: '100vh', minWidth: '100vh' }}
+        className='mui-grid-width'
+      >
+        <Card sx={{  borderRadius: '50px' }} className='sections-main'>
+          <LeftSection />
+          <RightSection />
+        </Card>
+      </Grid>
     </div>
   );
 }

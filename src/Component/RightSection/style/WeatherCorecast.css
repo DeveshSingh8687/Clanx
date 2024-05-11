@@ -1,0 +1,36 @@
+.wetherForecast{
+    display: flex;
+}
+.forecast-card{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    background-color: white;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    width: 30%;
+    /* height: 10vh; */
+    /* width: 50px; */
+}
+.forecast-card p{
+    margin:  0;
+}
+.forecast-card img{
+    width: 50px;
+}
+.dull-text{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Mobiles */
+@media only screen and (max-width:600px){
+    .wetherForecast{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .forecast-card{
+        width: 40%;
+    }
+}
