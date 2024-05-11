@@ -22,6 +22,7 @@ function LeftSection() {
     const [city, setcity] = useState('')
     const [isCel, setCel] = useState(true)
     const [day, setDay] = useState('')
+    const [cityImg,setCityImg] = useState('')
 
     const dispatch = useDispatch()
     const tempType = useSelector(data => data.ChangeTempratureType)
@@ -51,9 +52,17 @@ function LeftSection() {
         else { }
     }, [city])
 
-    // Change Temp Type Far/Cel
     const currentCity = weatherData ? weatherData.city.name : ''
     const country = weatherData ? weatherData.city.country : ''
+
+    useEffect(()=>{
+        // https://api.unsplash.com/search/collections?page=1&query=newYork&client_id=Tja5ejXbyQwSiHSLyAqZQxIOOLMnWW_j0Q4Q2jgAUtc
+        axios.get(`https://api.unsplash.com/search/collections?page=1&query=${currentCity}&client_id=Tja5ejXbyQwSiHSLyAqZQxIOOLMnWW_j0Q4Q2jgAUtc`)
+                .then(resp => setCityImg(resp.data.results[0].cover_photo.urls.raw))
+                .catch(error => console.log('error', error))
+    },[weatherData])
+
+    // Change Temp Type Far/Cel
     useEffect(() => {
         if (tempType.length) {
             axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&appid=${weatherAPIkey}&units=${tempType[0]}`)
@@ -153,8 +162,9 @@ function LeftSection() {
                     <CardMedia
                         sx={{ height: 100 }}
                         style={Imagestyles.media}
-                        image="https://images.pexels.com/photos/3680219/pexels-photo-3680219.jpeg?cs=srgb&dl=pexels-lukas-rodriguez-1845331-3680219.jpg&fm=jpg"
-                        title="green iguana"
+                        // image="https://images.pexels.com/photos/3680219/pexels-photo-3680219.jpeg?cs=srgb&dl=pexels-lukas-rodriguez-1845331-3680219.jpg&fm=jpg"
+                        image = {cityImg}
+                        title="City Image"
                     />
                     <div>
                         <Typography style={Imagestyles.overlay}>{currentCity},{country}</Typography>
